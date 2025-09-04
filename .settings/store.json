@@ -1,0 +1,88 @@
+{
+  "giteeAccessToken": "",
+  "templateList": [
+    {
+      "content": "整理成一篇详细完整的笔记。\n满足以下格式要求：\n- 如果是代码，必须完整保留，不要随意生成。\n- 文字复制的内容尽量不要修改，只处理格式化后的内容。",
+      "id": "0",
+      "range": "all",
+      "status": true,
+      "title": "笔记"
+    },
+    {
+      "content": "最近一周的记录整理成一篇周报，将每条记录形成一句总结，每条不超过50字。",
+      "id": "1",
+      "range": "week",
+      "status": true,
+      "title": "周报"
+    }
+  ],
+  "currentPage": "/core/article",
+  "githubImageUsername": "wheat456",
+  "autoSync": "300",
+  "githubUsername": "wheat456",
+  "primaryBackupMethod": "github",
+  "assetsPath": "assets",
+  "chatLanguage": "中文",
+  "giteeAutoSync": "disabled",
+  "translateModel": "",
+  "shortcuts": [
+    {
+      "key": "openWindow",
+      "value": "CommandOrControl+Shift+W"
+    },
+    {
+      "key": "quickRecordText",
+      "value": "CommandOrControl+Shift+T"
+    }
+  ],
+  "primaryModel": "",
+  "language": "简体中文",
+  "imageMethodModel": "",
+  "currentAi": "",
+  "autoUpdate": true,
+  "uiScale": 100,
+  "pageView": "panoramaView",
+  "collapsibleList": [
+    "模拟电路",
+    "assets"
+  ],
+  "darkMode": "system",
+  "placeholderModel": "",
+  "rerankingModel": "",
+  "previewTheme": "github",
+  "embeddingModel": "",
+  "jsdelivr": true,
+  "accessToken": "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",
+  "activeFilePath": "模拟电路/mos.md",
+  "gitlabCustomUrl": "",
+  "gitlabAccessToken": "",
+  "gitlabUsername": "",
+  "workspaceHistory": [
+    "E:\\md文件"
+  ],
+  "codeTheme": "github",
+  "promptList": [
+    {
+      "content": "请你扮演一个笔记软件的智能助手，可以参考记录内容，使用 markdown 语法，回答用户的问题。",
+      "id": "0",
+      "isDefault": true,
+      "title": "写作助手"
+    }
+  ],
+  "version": "0.20.3",
+  "githubImageAccessToken": "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",
+  "lastSettingPage": "sync",
+  "workspacePath": "E:\\md文件",
+  "useImageRepo": true,
+  "tesseractList": "eng,chi_sim",
+  "currentTagId": 1,
+  "enableOutline": true,
+  "aiModelList": [],
+  "gitlabAutoSync": "disabled",
+  "currentPromptId": "0",
+  "markDescModel": "",
+  "note_locale": "中文",
+  "gitlabInstanceType": "gitlab.com",
+  "audioModel": "",
+  "primaryImageMethod": "ocr"
+}
