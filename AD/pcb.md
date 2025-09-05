@@ -17,3 +17,17 @@
 # 裁板
 
 按下数字1，进入另一个视图，**Design » Edit Board Shape**，
+
+
+
+# 层级显示
+
+- panel->view configuration
+- 快捷键`L`
+- shift+S可以在当前层显示
+- 使用ctrl+shift+滚轮切换层级,或者+/-或者*
+
+
+
+
+层级管理器：design->layermanagement
