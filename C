@@ -1,4 +1,25 @@
-# 
+# Model（模型）
+
+1. 数据和业务规则的载体（纯数据 + 逻辑）
+2. 例如：`User`类（包含 ID、Name 等属性）、`OrderService`类（处理订单计算）
+3. 不依赖任何 UI 相关的代码（完全独立）
+
+# View（视图）
+
+- 就是你看到的界面（XAML 文件或 WinForm 窗体）
+
+- 只负责展示数据和接收用户输入（按钮点击、文本输入等
+- 不写业务逻辑，所有交互通过绑定关联到 ViewModel
+
+# ViewModel（视图模型）
+
+- 连接 View 和 Model 的 "桥梁"
+
+- 暴露供 View 绑定的属性（如`UserName`）和命令（如`SaveCommand`）
+
+- 处理 UI 触发的逻辑（如点击按钮后保存数据）
+
+- 需要实现`INotifyPropertyChanged`接口（通知 UI 数据变化）
 
 # 避坑指南
 
@@ -6,3 +27,7 @@
 2. **Model 不要依赖 ViewModel**，Model 是独立的领域模型
 3. **先设计 Model，再写 ViewModel，最后做 View**，逻辑顺序不要乱
 4. **少用代码隐藏（.cs 文件）**，View 的后台代码应尽量为空
+
+# 使用框架
+
+- `CommunityToolkit.Mvvm`
