@@ -1,0 +1,8 @@
+# 
+
+# 避坑指南
+
+1. **不要在 ViewModel 中引用 View**（如直接操作 TextBox），否则又回到耦合状态
+2. **Model 不要依赖 ViewModel**，Model 是独立的领域模型
+3. **先设计 Model，再写 ViewModel，最后做 View**，逻辑顺序不要乱
+4. **少用代码隐藏（.cs 文件）**，View 的后台代码应尽量为空
