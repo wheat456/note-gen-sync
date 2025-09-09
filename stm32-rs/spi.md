@@ -1,9 +1,17 @@
+# GPIO配置
+
+```rust
+    let sck = gpiob.pb3.into_alternate::<5>();
+    let miso=gpiob.pb4.into_alternate::<5>();
+    let mosi=gpiob.pb5.into_alternate::<5>();
+```
+
+
 # 时钟极性
 
 - 定义 “空闲时 SCK 的电平”
   * CPOL=0：空闲时 SCK 为**低电平**，通信时时钟从低变高（上升沿）、从高变低（下降沿）；
   * CPOL=1：空闲时 SCK 为**高电平**，通信时时钟从高变低（下降沿）、从低变高（上升沿）。
-
 
 # 时钟相位
 
