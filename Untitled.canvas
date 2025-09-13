@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"c136ec461fc339f7","x":-80,"y":-120,"width":105,"height":70,"type":"text","text":"MCU"},
+		{"id":"c8ec4538ea7f7086","x":88,"y":-115,"width":250,"height":60,"type":"text","text":""}
+	],
+	"edges":[
+		{"id":"ed9c5580e955b1e0","fromNode":"c136ec461fc339f7","fromSide":"right","toNode":"c8ec4538ea7f7086","toSide":"left"}
+	]
+}
