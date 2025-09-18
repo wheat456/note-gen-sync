@@ -1,7 +1,5 @@
 # USER_DEFINE
 -  **user_define = 自己写存储介质驱动**
-
-
 ## Version
 显示当前使用的FATFS文件系统库的版本号,这是只读信息，显示集成在CubeMX中的FatFS版本
 ## 功能参数
@@ -128,3 +126,40 @@
 - **Disabled**：不使用TRIM功能
 - **适用**：主要用于SSD和支持擦除优化的Flash存储
 
+###  FS_NOFSINFO (Force full FAT scan)
+**作用**：强制完整FAT扫描
+- **0**：使用FSInfo扇区获取空闲簇信息（快速）
+- **1**：总是执行完整FAT扫描（准确但慢）
+- **选择**：0适合稳定环境，1适合异常断电频繁的场合
+## 系统参数
+### 1. FS_TINY (Tiny mode) 
+**作用**：微型模式配置
+- **Enabled**：使用极小的数据缓存，节省RAM
+- **Disabled**：使用扇区大小的数据缓存
+- **权衡**：启用可节省512字节RAM，但降低性能
+### 2. FS_NORTC (Timestamp feature) 
+**作用**：时间戳功能配置
+- **Dynamic timestamp**：使用系统RTC获取动态时间
+- **Fixed timestamp**：使用固定时间戳
+- **No timestamp**：不记录时间信息
+- **依赖**：需要实现get_fattime()函数
+### 3. WORD_ACCESS (Independent access optimization) 
+**作用**：内存访问优化
+- **Byte access**：字节访问模式，兼容性好
+- **Word access**：字访问模式，某些平台性能更好
+- **选择**：ARM Cortex-M通常使用Byte access更安全
+### 4. FS_REENTRANT (Re-Entrancy)
+**作用**：重入保护（多线程安全）
+- **Enabled**：支持多线程并发访问，使用互斥锁
+- **Disabled**：不支持多线程，单线程使用
+- **重要**：FreeRTOS等多线程环境必须启用
+### 5. FS_TIMEOUT (Timeout ticks) 
+**作用**：互斥锁超时时间（仅FS_REENTRANT启用时有效）
+- **单位**：系统tick数
+- **1000**：1000个tick的等待时间
+- **0**：无限等待
+### 6. FS_LOCK (Number of files opened simultaneously) 
+**作用**：同时打开的文件锁定数量
+- **0**：禁用文件锁定功能
+- **2**：最多同时锁定2个文件
+- **用途**：防止同一文件被重复打开写入
