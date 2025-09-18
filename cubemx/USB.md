@@ -22,3 +22,30 @@
 - **作用**: 媒体I/O缓冲区大小
 - **值**: 512 bytes (标准扇区大小)
 - **用途**: 与存储介质(SD卡、SPI Flash等)进行数据交换的缓冲区
+
+# 设备描述符
+## Device Descriptor (设备描述符)
+
+**VID (Vendor Identifier)**:
+- **值**: 1155 (十六进制: 0x0483)
+- **作用**: 厂商标识符，这是ST官方的VID
+- **用途**: 电脑通过这个识别设备制造商
+**LANGID_STRING**:
+- **值**: English(United States)
+- **作用**: 设备支持的语言，影响字符串描述符显示
+**MANUFACTURER_STRING**:
+- **值**: STMicroelectronics
+- **作用**: 厂商名称，会在设备管理器中显示
+## Device Descriptor FS (全速设备描述符)
+**PID (Product Identifier)**:
+- **值**: 22314 (十六进制: 0x5720)
+- **作用**: 产品标识符，区分不同产品型号
+**PRODUCT_STRING**:
+- **值**: STM32 Mass Storage
+- **作用**: 产品名称，电脑中显示的设备名
+**CONFIGURATION_STRING**:
+- **值**: MSC Config
+- **作用**: 配置描述，说明当前USB配置
+**INTERFACE_STRING**:
+- **值**: MSC Interface
+- **作用**: 接口描述，说明USB接口功能
