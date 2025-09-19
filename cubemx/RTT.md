@@ -1,0 +1,2 @@
+- 需要`SEGGER_RTT.h SEGGER_RTT.C SEGGER_RTT_Conf.h` 3个文件
+- 使用probe-s
