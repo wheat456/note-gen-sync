@@ -3,3 +3,5 @@
 ```c
  SEGGER_RTT_WriteString(0, "This is an error message\n"); //0代表输出通道，也就是日志等级
 ```
+
+- 加上`SEGGER_RTT_printf.c`可以使用`SEGGER_RTT_printf(0, "w25qxx: read is %d\n",data[1]);`
