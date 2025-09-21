@@ -38,3 +38,28 @@ countStore.$patch({
 ```
 
 
+# 解构
+使用storeRef()来解构保证结构的数据也是响应式的
+
+# getters
+- 可以用来操作state
+```ts
+gettters：{
+	函数名(state){
+		return xxx
+	}
+}
+//也可以使用this
+```
+
+# 组合式写法
+```ts
+export const useCountStore=defineStore('count',()=>{
+	const talklist = reactive(0)
+	function getTalk(){
+	}
+	return {talklist,getTalk}
+})
+```
+
+
