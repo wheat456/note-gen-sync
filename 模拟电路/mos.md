@@ -7,10 +7,11 @@
 
 # nmos
 ### 截至
-- VGS​≤Vth​
+- $V_{GS}​$≤$V_{TH}$​
 
 ### 线性
-
+- $V_{GS}$​>$V_{th}​$
+- $V_D$<$V_G$
 ### 饱和
 
 
@@ -27,3 +28,4 @@
 | 线性区  | VGS​>Vth​ 且 VDS​<VGS​−Vth​ | VD​=VS​+μn​Cox​LW​(VGS​−Vth​)ID​​（VGS​ 越大，VD​ 越接近 VS​）           | 沟道未夹断，ID​ 随 VDS​ 线性变化 |
 | 饱和区  | VGS​>Vth​ 且 VDS​≥VGS​−Vth​ | VD​≥VS​+(VGS​−Vth​)，ID​ 由 VGS​ 单独决定，VD​ 与 VGS​ 间接相关（通过 ID​ 影响负载） | 沟道预夹断，ID​ 饱和          |
 
+问题，当工作在放大区时，gs电压多少
