@@ -24,3 +24,68 @@
 
 # 数据绑定
 ### 语法
+
+```xaml
+<TextBox Text="{Binding UserName ， Mode= ，UpdateSourceTrigger=}" />
+```
+
+### 步骤
+1. 将数据从model中拿到
+```c#
+public partial class PersonViewModel : ObservableObject
+{
+    private readonly Person _model; // Model 对象
+
+    public PersonViewModel(Person model)
+    {
+        _model = model;
+    }
+
+    public string Name
+    {
+        get => _model.Name;
+        set
+        {
+            if (_model.Name != value)
+            {
+                _model.Name = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    // 或者直接暴露整个 Model（不推荐，破坏封装）
+    // public Person Model => _model;
+}
+```
+
+  2. 设置 **DataContext**
+**在 XAML 中直接声明**
+```xaml
+<!-- Views/StudentView.xaml -->
+<Window 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:viewModels="clr-namespace:MyApp.ViewModels">
+    
+    <!-- 设置 DataContext 为 StudentViewModel -->
+    <Window.DataContext>
+        <viewModels:StudentViewModel />
+    </Window.DataContext>
+</Window>
+```
+
+**在后台代码中设置**
+```csharp
+// Views/StudentView.xaml.cs
+public partial class StudentView : Window
+{
+    public StudentView()
+    {
+        InitializeComponent();
+        DataContext = new StudentViewModel(); // 关联 ViewModel
+    }
+}
+```
+
+3. 绑定 `<TextBlock Text="{Binding Name}" />
+  
