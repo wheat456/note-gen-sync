@@ -49,3 +49,4 @@
 **INTERFACE_STRING**:
 - **值**: MSC Interface
 - **作用**: 接口描述，说明USB接口功能
+

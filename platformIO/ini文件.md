@@ -14,3 +14,7 @@ upload_protocol = cmsis-dap
 
 ```
 
+# 包括其他文件
+```
+build_flags = -I include/my_folder
+```
