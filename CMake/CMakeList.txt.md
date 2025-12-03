@@ -3,3 +3,9 @@
 - `add_executable(Tutorial main.cpp)` 构建一个名为 'Tutorial' 的可执行文件
 - `cmake ..` CMake 在父目录 (`..`) 中找到 `CMakeLists.txt`，并在当前目录生成构建系统文件。
 - `cmake --build .` 构建
+
+# 目标
+```
+# 它将由 src/main.cpp 文件编译而成
+ add_executable(MyProgram src/main.cpp)
+```
