@@ -9,3 +9,6 @@ MG82F6D32AY48：
 - **ACxout**：模拟比较输出
 ## 准备
 spi flash W25Q32
+
+# 1-4
+shift+D:抓取某个点进行移动
