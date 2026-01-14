@@ -1,15 +1,7 @@
 style是写在resources中的
 在style中写setter
 
-显示样式
-通过key确定一个唯一的名字，然后在别的地方使用`Style="{StaticResource 键名}"`
-```xml
-<Style x:Key="WarningButtonStyle" TargetType="Button">
-    <Setter Property="Background" Value="Red" />
-</Style>
 
-<Button Style="{StaticResource WarningButtonStyle}" Content="危险操作" />
-```
 
 隐式样式
 自动的应用到所属的类型上面
@@ -23,17 +15,6 @@ style是写在resources中的
 <Button Content="我也是" />
 ```
 
-样式继承
-使用baseon，语法`{StaticResource {x:Type 控件名}}`
-```xml
-<Style TargetType="Button">
-    <Setter Property="FontSize" Value="30" />
-</Style>
-
-<Style x:Key="BlueBtn" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-    <Setter Property="Background" Value="Blue" />
-</Style>
-```
 
 
 触发器
@@ -158,3 +139,51 @@ tag
 
 CommandBindings
 用于捕获那些广播命令
+
+
+# 步骤
+1. 写style 作用的类型
+	- 在这里还可以使用baseon继承样式语法`{StaticResource {x:Type 控件名}}`
+	- style上还可以设置key
+```xml
+
+
+<Style x:Key="BlueBtn" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">                                              这里
+    <Setter Property="Background" Value="Blue" />
+</Style>
+
+<Style TargetType="Button">
+    </Style>
+    
+```
+2. 使用setter设置属性
+```xml
+<Style TargetType="Button">
+    <Setter Property="Background" Value="Blue" />
+    <Setter Property="FontSize" Value="14" />
+</Style>
+```
+3. 如果要处理交互的逻辑就用style.trigger
+```Xml
+<Style TargetType="Button">
+    <Setter Property="Background" Value="Blue" />
+    
+    <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background" Value="Red" />
+        </Trigger>
+    </Style.Triggers>
+</Style>
+```
+4. 与上面是或的关系，重写控件模板就要setter设置template属性，然后放置一个controltemplate
+```xml
+<Setter Property="Template">
+    <Setter.Value>
+        <ControlTemplate TargetType="Button">
+            <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+    </Setter.Value>
+</Setter>
+```
