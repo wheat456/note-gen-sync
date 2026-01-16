@@ -26,6 +26,43 @@ public class OrderService
 | `AddTransient` | **瞬时 (Transient)** | 每次要，管家都给你 **new** 一个全新的。          |
 | `AddScoped`    | **范围 (Scoped)**    | 在同一个业务范围内（比如一次 Web 请求），管家只给同一个实例。 |
 | `AddSingleton` | **单例 (Singleton)** | 整个程序运行期间，管家只创建一次，所有人共用这一个。        |
+在这里，同一个作用域拿到的都是同样的对象
+步骤
+1. 将对象加入在作用域中，`AddScoped`
+2. 创建好provider后，创建作用域`using (IServiceScope scopeA = provider.CreateScope())`
+3. 在作用域中拿到作用域provider，就可以获取服务了
+```cs
+// 1. 注册服务
+var services = new ServiceCollection();
+services.AddScoped<IdGenerator>(); // 使用 Scoped 注册
+
+var provider = services.BuildServiceProvider();
+
+// --- 模拟第一个任务范围 (Scope A) ---
+Console.WriteLine("--- 进入 Scope A ---");
+using (IServiceScope scopeA = provider.CreateScope())
+{
+    var pA = scopeA.ServiceProvider;
+    
+    var id1 = pA.GetRequiredService<IdGenerator>().Id;
+    var id2 = pA.GetRequiredService<IdGenerator>().Id;
+    
+    Console.WriteLine($"第一次获取: {id1}");
+    Console.WriteLine($"第二次获取: {id2}");
+    Console.WriteLine($"结论：在同一个 Scope 内，对象是共享的吗？ {id1 == id2}");
+}
+
+Console.WriteLine("\n--- 进入 Scope B ---");
+// --- 模拟第二个任务范围 (Scope B) ---
+using (IServiceScope scopeB = provider.CreateScope())
+{
+    var pB = scopeB.ServiceProvider;
+    
+    var id3 = pB.GetRequiredService<IdGenerator>().Id;
+    Console.WriteLine($"新 Scope 获取: {id3}");
+    Console.WriteLine($"结论：跨 Scope 后，对象是同一个吗？ 结果为否。");
+}
+```
 
 
 # 同接口注入
