@@ -35,7 +35,10 @@ select-none 是否可以选择
 
 # 布局
 aspec-ratio 将图片等窗口进行比例调整
-colums-数字是指定多少列，而md lg 3x等就是给列一个
+colums-数字是指定多少列，而md lg 3x等就是给列一个预设的宽度
+- `break-after-{值}`：控制元素**之后**是否换行 / 换页（如 `break-after-column` 强制元素后换列，`break-after-page` 强制换页）；
+- `break-before-{值}`：控制元素**之前**是否换行 / 换页（如 `break-before-column` 强制元素前换列）；
+- `break-inside-{值}`：控制元素**内部**是否允许换行
 
 
 
