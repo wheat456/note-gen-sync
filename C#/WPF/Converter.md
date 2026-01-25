@@ -2,3 +2,4 @@
 Convert 从数据到ui
 ConvertBack 从ui到数据
 Binding.DoNothing 遇到错误不会更新到新的值
+直接在resources里面用local引用，然后定义key
