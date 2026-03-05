@@ -1,7 +1,7 @@
 # 快捷点
 
 - 创建pcb后用q来切换单位
-- g设置网格长度，ctrl+shift+g输入数字来确定
+- g设置网格长度，`ctrl+shift+g`输入数字来确定
 - ctrl+pgdn来显示包含元件的最大图
 - ctrl+滚轮就是放大和缩小窗格=ctrl+右键=paup和padn,这是放大和缩小
 - 滚轮上下移动，shift 滚轮左右移动
@@ -32,3 +32,10 @@
 
 
 层级管理器：design->layermanagement
+
+# 丝印
+字符高度：1-1.2mm
+线宽 0.15-2.0mm
+字符离焊盘大于0.15mm
+
+
