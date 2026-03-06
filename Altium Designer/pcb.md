@@ -19,8 +19,6 @@
 
 按下数字1，进入另一个视图，**Design » Edit Board Shape**，
 
-
-
 # 层级显示
 
 - panel->view configuration
@@ -28,14 +26,13 @@
 - shift+S可以在当前层显示
 - 使用ctrl+shift+滚轮切换层级,或者+/-或者*
 
-
-
-
 层级管理器：design->layermanagement
-
 # 丝印
 字符高度：1-1.2mm
 线宽 0.15-2.0mm
 字符离焊盘大于0.15mm
+
+铜与其他间距 10-12mil
+走线宽度6mil
 
 
