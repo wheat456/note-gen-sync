@@ -1,7 +1,7 @@
 # 快捷点
 
 - 创建pcb后用q来切换单位
-- g设置网格长度，`ctrl+shift+g`输入数字来确定
+- g设置网格长度，ctrl+shift+g输入数字来确定
 - ctrl+pgdn来显示包含元件的最大图
 - ctrl+滚轮就是放大和缩小窗格=ctrl+右键=paup和padn,这是放大和缩小
 - 滚轮上下移动，shift 滚轮左右移动
@@ -19,6 +19,8 @@
 
 按下数字1，进入另一个视图，**Design » Edit Board Shape**，
 
+
+
 # 层级显示
 
 - panel->view configuration
@@ -26,16 +28,11 @@
 - shift+S可以在当前层显示
 - 使用ctrl+shift+滚轮切换层级,或者+/-或者*
 
+
+
+
 层级管理器：design->layermanagement
-# 丝印
-字符高度：1-1.2mm
-线宽 0.15-2.0mm
-字符离焊盘大于0.15mm
-
-铜与其他间距 10-12mil
-走线宽度6mil
-
-电源比地内缩1mm
 
 
-pcb布局推荐25 mil, 50 mil, 或 100 mil。
+keepout layer 是所有的层都禁止铺铜
+而在某个层使用p,k防止的keepout 只作用当前层
