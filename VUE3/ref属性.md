@@ -8,3 +8,5 @@
 let name= ref();
 <script/>
 ```
+
+**ref** 在**script**中要使用`value`,在`template`中不用
