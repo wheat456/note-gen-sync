@@ -20,3 +20,22 @@
                     CoreWebView2HostResourceAccessKind.Allow);
 webView.Source = new Uri("https://myvueapp.local/index.html");
 ```
+
+
+
+# 桥接
+1. 创建一个NativeBridge类
+```cs
+    [ComVisible(true)]
+    public class NativeBridge
+    {
+		//这里都是写前端调用函数
+    }
+```
+
+2. 在main.cs中注入对象
+```cs
+webView.CoreWebView2.AddHostObjectToScript("bridge", new NativeBridge());
+```
+
+
