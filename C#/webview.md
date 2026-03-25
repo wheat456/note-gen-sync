@@ -24,18 +24,70 @@ webView.Source = new Uri("https://myvueapp.local/index.html");
 
 
 # 桥接
-1. 创建一个NativeBridge类
-```cs
-    [ComVisible(true)]
-    public class NativeBridge
-    {
-		//这里都是写前端调用函数
-    }
+## vue
+1. 定义双方发送的数据类型
+```ts
+interface WpfMessage {
+
+  type: string;
+
+  payload: any;
+
+}
 ```
 
-2. 在main.cs中注入对象
-```cs
-webView.CoreWebView2.AddHostObjectToScript("bridge", new NativeBridge());
+2. 定义导出函数
+```ts
+ export function useWpfBridge(){
+ }
 ```
+	1. 定义接受到数据的处理函数 
+```ts
+  const handleMessage = (event: any) => {
 
+    const data = event.data as WpfMessage;
+
+    lastMessage.value = data;
+
+  
+
+    if (data.type === "") {
+
+    }
+
+  };
+```
+	2. 定义挂载和卸载执行的注册监听 
+```ts
+  
+
+  onMounted(() => {
+
+    if (window.chrome?.webview) {
+
+      // 注册监听
+
+      window.chrome.webview.addEventListener("message", handleMessage);
+
+      // 通知 WPF：Vue 这边已经准备好了
+
+      sendToWpf({ type: "VUE_READY", payload: {} });
+
+    } else {
+
+      console.warn("当前环境不是 WebView2，WPF Bridge 无法启动");
+
+    }
+
+  });
+
+  
+
+  onUnmounted(() => {
+
+    window.chrome?.webview?.removeEventListener("message", handleMessage);
+
+  });
+```
+	3. 定义发送函数，方便外边调用
 
