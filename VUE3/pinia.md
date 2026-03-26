@@ -1,3 +1,5 @@
+安装pinia `bun i pinia`
+
 ```ts
 import {createPinia} from 'pinia'
 const pinia = createPinia()
