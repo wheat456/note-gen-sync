@@ -90,5 +90,19 @@ public partial class StudentView : Window
 3. 绑定 `<TextBlock Text="{Binding Name}" />
 
 定义依赖属性
-在.cs文件中用propdp tab两次就创建了架构
+在.cs文件中用propdp tab两次就创建了架构，然后用tab依次调整。
+其中Myproperty就是在xaml中的属性
+ownerclass 写当前所在的类
+PropertyMetadata 默认值
+```cs
+        public int MyProperty
+        {
+            get { return (int)GetValue(MyPropertyProperty); }
+            set { SetValue(MyPropertyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MyPropertyProperty =
+            DependencyProperty.Register("MyProperty", typeof(int), typeof(ownerclass), new PropertyMetadata(0));
+```
   
