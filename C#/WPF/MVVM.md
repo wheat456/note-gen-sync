@@ -88,4 +88,7 @@ public partial class StudentView : Window
 ```
 
 3. 绑定 `<TextBlock Text="{Binding Name}" />
+
+定义依赖属性
+在.cs文件中用propdp tab两次就创建了架构
   
