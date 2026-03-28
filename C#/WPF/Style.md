@@ -53,8 +53,9 @@
     </Style.Triggers>
 </Style>
 ```
-多重触发器
-在style.trigger中设置，还要设置MultiTrigger.Conditions条件，条件中有Condition
+
+### 多重触发器
+在 `style.triggers` 中设置，还要设置 `MultiTrigger.Conditions` 条件，条件中有`Condition`
 ```xml
 <Style TargetType="Button">
     <Setter Property="Background" Value="LightGray" />
@@ -73,7 +74,7 @@
 ```
 如果要实现或操作，那么就用两个trigger
 
-datatrigger
+###  datatrigger
 不会使用property，而是绑定到后面的数据，当满足条件时，就触发
 ```xml
 <DataTrigger Binding="{Binding 属性名}" Value="期望的值">
@@ -81,9 +82,32 @@ datatrigger
 </DataTrigger>
 ```
 
-转换器
-可以通过mvvm 的计算属性来解决，通过监控属性来通知计算属性更新
-因为value不能进行运算，比如比较大小所以要使用转换器
+# 转换器
+### BooleanToVisibilityConverter
+```cs
+<BooleanToVisibilityConverter x:Key="Bool2Vis" />
+
+<Button Visibility="{Binding IsVisible, Converter={StaticResource Bool2Vis}}" />
+```
+
+### 自定义转换器
+
+```cs
+public class xxconverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+}
+```
+
+当自定义 **converter** 后，要在 `resource` 中引入 local 一般代表的是当前程序的命名空间
+```cs
+<Window.Resources>
+ <local:MyColorConverter x:Key="ColorConv" /> 
+ </Window.Resources>
+```
+
+因为 value 不能进行运算，比如比较大小所以要使用转换器
 ```xml
 <DataTrigger Binding="{Binding Price, Converter={StaticResource MoreThan100Converter}}" Value="True">
     <Setter Property="Foreground" Value="Red" />
@@ -94,7 +118,7 @@ datatrigger
 <DataTrigger Binding="{Binding Price, Converter={StaticResource MyLimitConverter}, ConverterParameter=200}" Value="True">
 ```
 
-多重数据trigger
+### 多重数据trigger
 ```xml
 <MultiDataTrigger>
     <MultiDataTrigger.Conditions>
@@ -115,7 +139,7 @@ datatrigger
 tag
 就像text一样，只不过不显示
 
-事件触发器
+# 事件触发器
 用于触发动画
 ```xml
 <Style.Triggers>
