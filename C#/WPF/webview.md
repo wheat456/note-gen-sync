@@ -1,0 +1,116 @@
+# 安装
+`Microsoft.Web.WebView2`
+
+# 使用
+- 在xaml里面定义`wv2`
+- 在`grid`中使用`wv2`
+```xaml
+<wv2:WebView2 Name="webView"/>
+```
+
+- 在main.cs中定义 **window_load** 函数来加载 **webview**
+	- `private async void Window_Loaded(object sender, RoutedEventArgs e)`
+	- 函数中的参数是必须的，这是这个委托的格式
+
+```cs
+private async void InitializeWebView()
+    {
+        // 1. 等待初始化完成
+        await myWebView.EnsureCoreWebView2Async();
+
+        // 2. 此时 CoreWebView2 属性才可用，可以进行配置
+        myWebView.CoreWebView2.Settings.IsPasswordAutofillEnabled = false;
+
+        // 3. 导航到目标页面
+        myWebView.Source = new Uri("https://www.google.com");
+    }
+```
+ `await myWebView.EnsureCoreWebView2Async();` 异步初始化webview
+ `myWebView.Source = new Uri("https://www.google.com");` 导航到一个网站
+
+### 连接本地网页
+如果想加载自己本地的网页，首先就应该找到本地的路径
+```cs
+`string distPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "web_dist");`
+```
+然后就将路径与自定义域名绑定
+```cs
+webView.CoreWebView2.SetVirtualHostNameToFolderMapping( "myapp.local", distPath, CoreWebView2HostResourceAccessKind.Allow );
+```
+然后访问自定义域名
+```cs
+webView.Source = new Uri("https://myapp.local/index.html");
+```
+`
+
+
+
+
+# 桥接
+## vue
+1. 定义双方发送的数据类型
+```ts
+interface WpfMessage {
+
+  type: string;
+
+  payload: any;
+
+}
+```
+
+2. 定义导出函数
+```ts
+ export function useWpfBridge(){
+ }
+```
+	1. 定义接受到数据的处理函数 
+```ts
+  const handleMessage = (event: any) => {
+
+    const data = event.data as WpfMessage;
+
+    lastMessage.value = data;
+
+  
+
+    if (data.type === "") {
+
+    }
+
+  };
+```
+	2. 定义挂载和卸载执行的注册监听 
+```ts
+  
+
+  onMounted(() => {
+
+    if (window.chrome?.webview) {
+
+      // 注册监听
+
+      window.chrome.webview.addEventListener("message", handleMessage);
+
+      // 通知 WPF：Vue 这边已经准备好了
+
+      sendToWpf({ type: "VUE_READY", payload: {} });
+
+    } else {
+
+      console.warn("当前环境不是 WebView2，WPF Bridge 无法启动");
+
+    }
+
+  });
+
+  
+
+  onUnmounted(() => {
+
+    window.chrome?.webview?.removeEventListener("message", handleMessage);
+
+  });
+```
+	3. 定义发送函数，方便外边调用
+

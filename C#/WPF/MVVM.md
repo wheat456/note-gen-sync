@@ -1,19 +1,3 @@
-#### 1. Model：数据与业务规则的 “仓库”
-
-- **职责**：存放数据、定义数据结构，以及最核心的业务逻辑（如数据验证、计算、持久化等）。
-- **特点**：完全独立于 UI，不依赖 View 或 ViewModel，甚至可以在非 UI 场景（如控制台、后端）复用。
-
-#### 2. View：用户界面的 “展示层”
-
-- **职责**：只负责 UI 渲染（布局、控件、样式），通过数据绑定关联 ViewModel 的数据和命令。
-- **特点**：几乎不写业务逻辑，代码（如 XAML 的后台代码 .xaml.cs）仅处理纯 UI 相关逻辑（如动画、控件事件转发给命令）。
-
-#### 3. ViewModel：View 与 Model 的 “中间人”
-
-- **职责**：暴露供 View 绑定的**数据属性**和**命令**，协调 View 与 Model 的交互（如从 Model 取数据给 View，接收 View 的操作后调用 Model 处理）。
-- **特点**：不依赖 View（不知道具体用什么控件展示），但依赖 Model；需要实现属性通知（如 `INotifyPropertyChanged`）让 View 感知数据变化。
-
-先写**model->viewModel->view**
 ## 项目结构
 ```plaintext
 ├─ Models/              // 存放 Model 相关代码
@@ -21,10 +5,105 @@
 ├─ Views/               // 存放 View 相关代码
 └─ Services/            // 存放业务服务（可选，复杂项目用）
 ```
+#### 1. Model
+- 简单说就是数据原型，比如定义一个人的基本信息：年龄、身高、姓名
+
+#### 2. View
+
+- 写UI 相关的Xaml
+
+#### 定义依赖属性
+在 **.cs** 文件中用`propdp` **tab**两次就创建了架构，然后用tab依次调整。
+其中 **Myproperty** 就是在**xaml**中的属性
+**ownerclass** 写当前所在的类
+**PropertyMetadata** 默认值
+```cs
+        public int MyProperty
+        {
+            get { return (int)GetValue(MyPropertyProperty); }
+            set { SetValue(MyPropertyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MyPropertyProperty =
+            DependencyProperty.Register("MyProperty", typeof(int), typeof(ownerclass), new PropertyMetadata(0));
+```
+
+#### 3. ViewModel
+
+- **职责**：暴露供 View 绑定的**数据属性**和**命令**，协调 View 与 Model 的交互（如从 Model 取数据给 View，接收 View 的操作后调用 Model 处理）。
+- **特点**：不依赖 View（不知道具体用什么控件展示），但依赖 Model；需要实现属性通知（如 `INotifyPropertyChanged`）让 View 感知数据变化。
+
+#### 绑定
+**手动实现属性变化通知**
+
+```cs
+public class ViewModel : INotifyPropertyChanged  
+{  
+private int _count;  
+  
+public int Count  
+{  
+get => _count;  
+set  
+{  
+if (_count != value)  
+{  
+_count = value;  
+OnPropertyChanged(nameof(Count));  
+}  
+}  
+}  
+  
+public event PropertyChangedEventHandler PropertyChanged;  
+  
+protected virtual void OnPropertyChanged(string propertyName)  
+{  
+PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));  
+}  
+}
+```
+
+	在使用 **mvvm** 后属性变化的写法, 这个属性是双向的，但是在前端通过mode=twoway来改变
+```cs
+        private int _count;
+
+        public int Count
+        {
+            get { return _count; }
+            set
+            {
+                SetProperty(ref _count, value); //需要mvvm框架才可以
+            }
+        }
+```
+
+
+
+
+
+
+
+先写**model->viewModel->view**
+
+
+# MVVM Toolkit
+# 命令
+这里需要首字母大写
+```cs
+        [RelayCommand] 
+        public void AddCount()
+        {
+            Count++;
+        }
+```
 
 # 数据绑定
 ### 语法
-
+- UpdateSourceTrigger
+	- LostFocus 失去焦点更新 
+	- PropertyChanged **实时更新**
+	- Explicit **手动更新**
 ```xaml
 <TextBox Text="{Binding UserName ， Mode= ，UpdateSourceTrigger=}" />
 ```
@@ -89,20 +168,5 @@ public partial class StudentView : Window
 
 3. 绑定 `<TextBlock Text="{Binding Name}" />
 
-定义依赖属性
-在.cs文件中用propdp tab两次就创建了架构，然后用tab依次调整。
-其中Myproperty就是在xaml中的属性
-ownerclass 写当前所在的类
-PropertyMetadata 默认值
-```cs
-        public int MyProperty
-        {
-            get { return (int)GetValue(MyPropertyProperty); }
-            set { SetValue(MyPropertyProperty, value); }
-        }
 
-        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty MyPropertyProperty =
-            DependencyProperty.Register("MyProperty", typeof(int), typeof(ownerclass), new PropertyMetadata(0));
-```
   
