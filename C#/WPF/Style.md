@@ -140,7 +140,8 @@ tag
 就像text一样，只不过不显示
 
 # 事件触发器
-用于触发动画
+普通trigger 触发后会自动恢复，这个trigger需要反写动画
+用于**触发动画**
 ```xml
 <Style.Triggers>
     <EventTrigger RoutedEvent="MouseEnter">
@@ -154,7 +155,7 @@ tag
 </Style.Triggers>
 ```
 
-多重绑定
+# 多重绑定
 将多个数据源重新格式化一下再给value
 ```xml
 <Setter Property="ToolTip">
