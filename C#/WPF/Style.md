@@ -1,8 +1,9 @@
-style是写在resources中的
-在style中写setter
+**style** 是写在 **resources** 中的
+在 **style** 中写**setter**
+如果想要样式用到多个组件上就用 `resources` , 不然就用 `style`
 
-显示样式
-通过key确定一个唯一的名字，然后在别的地方使用`Style="{StaticResource 键名}"`
+## 显示样式
+通过 **key** 确定一个唯一的名字，然后在别的地方使用`Style="{StaticResource 键名}"`
 ```xml
 <Style x:Key="WarningButtonStyle" TargetType="Button">
     <Setter Property="Background" Value="Red" />
@@ -11,8 +12,8 @@ style是写在resources中的
 <Button Style="{StaticResource WarningButtonStyle}" Content="危险操作" />
 ```
 
-隐式样式
-自动的应用到所属的类型上面
+## 隐式样式
+自动的应用到所属的类型上面，一定要用 `targettype` 指定类型
 ```xml
 <Style TargetType="Button">
     <Setter Property="FontSize" Value="20" />
@@ -23,8 +24,8 @@ style是写在resources中的
 <Button Content="我也是" />
 ```
 
-样式继承
-使用baseon，语法`{StaticResource {x:Type 控件名}}`
+## 样式继承
+使用 **baseon**，语法`{StaticResource {x:Type 控件名}}`
 ```xml
 <Style TargetType="Button">
     <Setter Property="FontSize" Value="30" />
@@ -36,9 +37,10 @@ style是写在resources中的
 ```
 
 
-触发器
-触发器与setter并列
-先写.trigger,再写trigger，trigger和setter一样都可以设置property
+## 触发器
+触发器与 **setter** 并列
+先写   .trigger,再写trigger，trigger和setter一样都可以设置property
+首先要创建一个集合 （triggers）才能在里面写，setter 不写是因为默认隐藏了
 ```xml
 <Style TargetType="Button">
     <Setter Property="Background" Value="LightGray" />
