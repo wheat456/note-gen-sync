@@ -55,7 +55,56 @@ webView.Source = new Uri("https://myapp.local/index.html");
 
 # 桥接
 ## vue
-1. 定义双方发送的数据类型
+1. 首先在 Vue Ts 没有代码提示，需要自己在env.d.ts中定义全局接口
+	1. **`window.chrome`**: 检查当前是否在类 Chrome/Chromium 内核的环境中运行。
+	2. **`window.chrome.webview`**: 检查是否处于 **Microsoft WebView2** 容器内。如果是普通的 Edge 浏览器访问网页，这个对象是不存在的。
+	3. **`window.chrome.webview.hostObjects`**: 检查是否有 C# 后端“注入”的对象。只有当 C# 执行了 `AddHostObjectToScript` 后，这个属性才可用。
+```ts
+declare global {
+  interface Window {
+    chrome: {
+      webview: {
+             
+        hostObjects: {
+	        //如果想要更好的提示
+	        bridge:{
+		        // 这里是后端的函数类型
+		        add(a:number, b:number):promise<string>
+	        }
+        };
+
+      };
+    };
+  }
+}
+```
+2.  拿到 `bridge`
+	1. `const bridge= window.chrome.webview.hostObjects.bridge`
+	2. 通过 `bridge` 来 调用函数
+3. 可以封装一个 `bridge` 来用
+```ts
+// src/composables/useNative.ts
+export function useNative() {
+  const isWebView = !!window.chrome?.webview;
+  
+  // 代理 C# 对象
+  const nativeBridge = window.chrome?.webview?.hostObjects?.bridge;
+
+  const callNative = async (msg: string) => {
+    if (!isWebView) {
+      console.warn("当前不在 WebView2 环境中");
+      return;
+    }
+    return await nativeBridge.CallFromVue(msg);
+  };
+
+  return { isWebView, callNative };
+}
+```
+
+
+
+4. 定义双方发送的数据类型
 ```ts
 interface WpfMessage {
 
