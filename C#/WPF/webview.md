@@ -42,7 +42,14 @@ webView.CoreWebView2.SetVirtualHostNameToFolderMapping( "myapp.local", distPath,
 webView.Source = new Uri("https://myapp.local/index.html");
 ```
 `
-
+# 前端调用后端
+1.  首先，在c# 创建一个类用来包含那些可以被前端调用的函数
+2. `[ComVisible(true)]` 用这个在类上，打上标记
+3. `webView.CoreWebView2.AddHostObjectToScript("myBridge", new Bridge());`
+	- 注入到前端，mybrige 是前端拿到的对象，`const bridge = window.chrome.webview.hostObjects.myBridge;`
+	- 前端调用后端函数 
+`await bridge.ShowMessage("Hello WPF!");`
+4. 如果想要c# 在非ui上运行，那么就使用 `async Task`
 
 
 
@@ -103,9 +110,7 @@ interface WpfMessage {
     }
 
   });
-
   
-
   onUnmounted(() => {
 
     window.chrome?.webview?.removeEventListener("message", handleMessage);
