@@ -108,3 +108,28 @@ public class MyController([FromKeyedServices("sms")] IMessageService smsService)
 
 var smsService = serviceProvider.GetRequiredKeyedService<IMessageService>("sms");
 ```
+
+
+# 实现步骤
+1. 首先定义自己的服务类和接口
+```cs
+public interface IMessageService
+{
+    string GetMessage();
+}
+
+// 2. 实现类
+public class HelloWorldService : IMessageService
+{
+    public string GetMessage()
+    {
+        return "Hello from DI!";
+    }
+}
+```
+2. 然后在主函数中注册
+	1. 创建一个全局的Provider `public static IServiceProvider ServiceProvider { get; private set; }`
+	2. 创建服务集合 ` var services = new ServiceCollection();`
+	3. 注册服务 `services.AddSingleton<IMessageService, HelloWorldService>();`
+	4. `ServiceProvider = services.BuildServiceProvider();` 构建Provider
+	5. 多个service 可以合并成一个
