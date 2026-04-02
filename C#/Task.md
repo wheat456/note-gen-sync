@@ -1,3 +1,6 @@
+
+
+
 等待所有任务完成
 ```cs 
 string[] results = await Task.WhenAll(task1, task2);
@@ -7,3 +10,4 @@ string[] results = await Task.WhenAll(task1, task2);
 ```cs
 Task completedTask = await Task.WhenAny(delayTask, dataTask);
 ```
+
