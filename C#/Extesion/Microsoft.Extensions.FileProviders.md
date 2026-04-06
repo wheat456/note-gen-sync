@@ -6,4 +6,9 @@ var physicalProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory())
 2. 使用
 ```cs
    IFileInfo fileInfo = provider.GetFileInfo(fileName);
-   ```
+```
+
+# 场景
+- `ASP.Net`
+
+
