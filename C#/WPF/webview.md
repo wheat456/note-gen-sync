@@ -3,6 +3,7 @@
 
 # 使用
 - 在xaml里面定义`wv2`
+- `xmlns:wv2="xxxxxxx------"`
 - 在`grid`中使用`wv2`
 ```xaml
 <wv2:WebView2 Name="webView"/>
