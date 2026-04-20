@@ -97,29 +97,18 @@ public class MyMessageBoxAction : TriggerAction<FrameworkElement>
 
 
 # 官方触发器
+
 - 其中事件名就算WPF中的事件
 ```cs
-<i:EventTrigger EventName="Click">
+    <i:Interaction.Triggers>
+        <!-- 系统自带的事件触发器 -->
+        <i:EventTrigger EventName="Click">
+            <!-- 你的 Action -->
+            <local:ShowMessageAction Message="Hello Action"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
 ```
-- 还有`<i:DataTrigger>`、`<i:PropertyChangedTrigger>`、`<i:KeyTrigger>`、`<i:TimerTrigger>`
-
-
-
-behavior
-将一段复杂的逻辑封装成一个可复用的组件，然后像“贴纸”一样贴在 XAML 控件上。
-- **`OnAttached()`**: 当行为被贴到控件上时触发。在这里你可以访问 `AssociatedObject`（即被贴的那个控件）并挂载事件。
-- **`OnDetaching()`**: 当行为从控件上移除时触发。在这里必须解绑事件，防止内存泄漏。
-
-| `MouseDragElementBehavior`    | 鼠标拖拽                      |
-| ----------------------------- | ------------------------- |
-| `FluidMoveBehavior`           | 流体移动，比如list重新编排           |
-| `DataStateBehavior`           | 数据状态行为，当数据为某一个值时，就执行响应的动作 |
-| `GoToStateAction`             | 条件行为                      |
-| `TranslateZoomRotateBehavior` | 平移/缩放/旋转，类似地图             |
-
-trigger
-
-### 1. 事件类：监听 UI 的风吹草动
 
 - **`EventTrigger` (最常用)**
     - **用途**：监听任何普通的路由事件（如 `Click`, `MouseEnter`, `Loaded`）。
@@ -153,3 +142,13 @@ trigger
 - **`TriggerCollection`**
     - **用途**：这其实是一个容器。当你需要把好几个触发器打包在一起时会用到，通常在编写复杂的自定义 Behavior 时在后台代码中使用。
 
+
+
+将一段复杂的逻辑封装成一个可复用的组件，然后像“贴纸”一样贴在 XAML 控件上。
+
+| `MouseDragElementBehavior`    | 鼠标拖拽                      |
+| ----------------------------- | ------------------------- |
+| `FluidMoveBehavior`           | 流体移动，比如list重新编排           |
+| `DataStateBehavior`           | 数据状态行为，当数据为某一个值时，就执行响应的动作 |
+| `GoToStateAction`             | 条件行为                      |
+| `TranslateZoomRotateBehavior` | 平移/缩放/旋转，类似地图             |
