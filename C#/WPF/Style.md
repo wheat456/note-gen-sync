@@ -1,7 +1,4 @@
-**style** 是写在 **resources** 中的
-在 **style** 中写**setter**
 如果想要样式用到多个组件上就用 `resources` , 不然就用 `style`
-
 ## 显示样式
 通过 **key** 确定一个唯一的名字，然后在别的地方使用`Style="{StaticResource 键名}"`
 ```xml
