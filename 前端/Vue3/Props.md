@@ -4,3 +4,4 @@
 const { msg } = defineProps(['msg'])
 ```
 解构是一次性值拷贝，切断了和响应式 props 对象的关联
+vue3.5结构后还有响应性
