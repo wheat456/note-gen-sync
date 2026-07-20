@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -184,21 +184,23 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
       "obsidian-git:Open Git source control": false
     }
   },
   "active": "02c82d9eb54fee49",
   "lastOpenFiles": [
+    "模拟电路/IGBT.md",
+    "模拟电路/三级管.md",
+    "模拟电路/运放.md",
     "模拟电路/resource/Pasted image 20260719205951.png",
     "模拟电路/resource/Pasted image 20260719200905.png",
-    "模拟电路/运放.md",
     "模拟电路/resource/Pasted image 20260719205731.png",
     "模拟电路/resource/Pasted image 20260719205729.png",
     "模拟电路/resource/Pasted image 20260719205728.png",
