@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "模拟电路/运放.md",
+                "file": "模拟电路/音频功放.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "运放"
+              "title": "音频功放"
             }
           }
         ]
@@ -196,9 +196,17 @@
   },
   "active": "02c82d9eb54fee49",
   "lastOpenFiles": [
+    "模拟电路/RC.md",
+    "模拟电路/MOS.md",
+    "模拟电路/关键参数.md",
+    "模拟电路/电源符号.md",
+    "模拟电路/二极管.md",
+    "模拟电路/反激电源设计.md",
+    "模拟电路/功放.md",
+    "模拟电路/滤波.md",
+    "模拟电路/运放.md",
     "模拟电路/IGBT.md",
     "模拟电路/三级管.md",
-    "模拟电路/运放.md",
     "模拟电路/resource/Pasted image 20260719205951.png",
     "模拟电路/resource/Pasted image 20260719200905.png",
     "模拟电路/resource/Pasted image 20260719205731.png",
@@ -207,7 +215,7 @@
     "模拟电路/resouces",
     "模拟电路/resource/Pasted image 20260719200547.png",
     "模拟电路/比较器.md",
-    "模拟电路/数字功放.md",
+    "模拟电路/音频功放.md",
     "模拟电路/Altium/DRC.md",
     "Vue3/列表渲染.md",
     "模拟电路/Altium",
