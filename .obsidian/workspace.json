@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9b9fa08858e8872d",
+        "id": "20096c7e58e13f2a",
         "type": "tabs",
         "children": [
           {
-            "id": "02c82d9eb54fee49",
+            "id": "f3da28f9762a9a05",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "音频/AP.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "AP"
+              "title": "New tab"
             }
           }
         ]
@@ -156,13 +152,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Vue3/列表渲染.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 列表渲染"
+              "title": "Outline"
             }
           },
           {
@@ -191,11 +186,22 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "02c82d9eb54fee49",
+  "active": "d2c423928e902c90",
   "lastOpenFiles": [
+    "音频/AP/分析器.md",
+    "音频/AP/模拟输入.md",
+    "音频/AP/信号生成.md",
+    "Excalidraw/Drawing 2026-07-24 18.32.48.excalidraw.md",
+    "Pasted Image 20260724183305_565.png",
+    "Untitled.base",
+    "音频/AP.md",
+    "音频/AP",
+    "Vue3/pinia.md",
+    "软件编程/C#/基础语法.md",
     "模拟电路/运放.md",
     "模拟电路/音频功放.md",
     "模拟电路/功放.md",
@@ -213,7 +219,6 @@
     "Vue3/列表渲染.md",
     "模拟电路/Altium",
     "Vue3/ref属性.md",
-    "软件编程/VB/基础语法.md",
-    "Untitled.base"
+    "软件编程/VB/基础语法.md"
   ]
 }
