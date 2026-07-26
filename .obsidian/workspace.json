@@ -11,10 +11,14 @@
             "id": "f3da28f9762a9a05",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "音频/AP/FFT频谱分析器.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "FFT频谱分析器"
             }
           }
         ]
@@ -152,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "音频/AP/FFT频谱分析器.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of FFT频谱分析器"
             }
           },
           {
@@ -192,8 +197,10 @@
   },
   "active": "d2c423928e902c90",
   "lastOpenFiles": [
-    "音频/AP/分析器.md",
+    "音频/AP/音频分析器.md",
+    "音频/AP/FFT频谱分析器.md",
     "音频/AP/模拟输入.md",
+    "音频/采样.md",
     "音频/AP/信号生成.md",
     "Excalidraw/Drawing 2026-07-24 18.32.48.excalidraw.md",
     "Pasted Image 20260724183305_565.png",
