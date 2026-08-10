@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "23ee9a0bf7cba421",
+        "id": "ffd1874cd761b50b",
         "type": "tabs",
         "children": [
           {
-            "id": "2c16cb19c2259a42",
+            "id": "2ca2217bec7758f8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "软件编程/单片机开发流程.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "单片机开发流程"
+              "title": "新标签页"
             }
           }
         ]
@@ -158,13 +154,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Vue3/列表渲染.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 列表渲染"
+              "title": "大纲"
             }
           },
           {
@@ -197,12 +192,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2c16cb19c2259a42",
+  "active": "d2c423928e902c90",
   "lastOpenFiles": [
-    "软件编程/单片机.md",
-    "软件编程/单片机开发流程.md",
     "CMake/语法.md",
     "CMake/CMakeList.txt.md",
+    "软件编程/单片机开发流程.md",
+    "软件编程/单片机.md",
     "软件编程/VB/基础语法.md",
     "音频/采样.md",
     "音频/AP/音频分析器.md",
