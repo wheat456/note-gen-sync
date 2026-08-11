@@ -33,3 +33,7 @@
 层级管理器：design->layermanagement
 keepout layer 是所有的层都禁止铺铜
 而在某个层使用`P+K`防止的keepout 只作用当前层
+
+
+# 字体大小
+- **Altium Designer (AD)：** 建议使用 `Stroke Font`（矢量字体），`Height` 设为 `1.2mm` (或 `50mil`)，`Stroke Width` 设为 `0.2mm` (或 `8mil`)。
