@@ -1,4 +1,4 @@
-安装pinia `bun i pinia`
+**安装 pinia** :`bun i pinia`
 
 ```ts
 import {createPinia} from 'pinia'

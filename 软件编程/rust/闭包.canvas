@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"3317dfd24e5e54cc","type":"text","text":"声明闭包","x":-600,"y":80,"width":250,"height":60},
+		{"id":"2d19a67fd4a9640e","type":"text","text":"捕获变量","x":-360,"y":-130,"width":140,"height":60},
+		{"id":"67792e685bcd5666","type":"text","text":"移动","x":-140,"y":-251,"width":250,"height":60},
+		{"id":"b546c1348eb00b38","type":"text","text":"move强制移动","x":162,"y":-329,"width":250,"height":60},
+		{"id":"26171ef8788b085f","type":"text","text":"可变借用","x":-140,"y":-130,"width":250,"height":60},
+		{"id":"c84a67a10cd6ba9d","type":"text","text":"不可变借用","x":-140,"y":2,"width":250,"height":60},
+		{"id":"328627dffcbe25e6","type":"text","text":"闭包名称需mut","x":178,"y":-191,"width":250,"height":60},
+		{"id":"a21000174aeee9ca","type":"text","text":"可以实现copy特征，就是不用获取闭包的所有权","x":157,"y":116,"width":250,"height":60},
+		{"id":"75fe93181f646ca8","type":"text","text":"闭包的类型","x":-258,"y":340,"width":250,"height":60},
+		{"id":"f07e1645126eac99","x":-259,"y":474,"width":250,"height":60,"type":"text","text":"由编译器推导，或者手动，一个闭包拥有多种特征"},
+		{"id":"891699c3d5988765","type":"text","text":"fn","x":94,"y":244,"width":86,"height":60},
+		{"id":"f18b7fb25bffef48","type":"text","text":"fnonce","x":94,"y":504,"width":126,"height":50},
+		{"id":"0f99decdbc27bfe1","type":"text","text":"如果闭包需要修改捕获的变量","x":254,"y":383,"width":250,"height":60},
+		{"id":"b3a00816631e6934","type":"text","text":"如果闭包需要获取捕获变量的所有权","x":254,"y":499,"width":250,"height":60},
+		{"id":"55adf7a9d3a1a7d3","type":"text","text":"代表着闭包实现了FnMut trait","x":178,"y":-100,"width":250,"height":60},
+		{"id":"8a16a039e990cc5a","type":"text","text":"fnmut","x":94,"y":383,"width":101,"height":60},
+		{"id":"15422b85aabe466b","x":254,"y":244,"width":250,"height":60,"type":"text","text":"如果闭包只是借用捕获的变量,不修改它们"}
+	],
+	"edges":[
+		{"id":"33177dae27b3c07b","fromNode":"3317dfd24e5e54cc","fromSide":"right","toNode":"2d19a67fd4a9640e","toSide":"left"},
+		{"id":"b2aed7bc0e953d8a","fromNode":"2d19a67fd4a9640e","fromSide":"right","toNode":"67792e685bcd5666","toSide":"left"},
+		{"id":"10e8e740273b0eff","fromNode":"2d19a67fd4a9640e","fromSide":"right","toNode":"26171ef8788b085f","toSide":"left"},
+		{"id":"019184efc91dc6a1","fromNode":"2d19a67fd4a9640e","fromSide":"right","toNode":"c84a67a10cd6ba9d","toSide":"left"},
+		{"id":"582a19ea85a5a047","fromNode":"67792e685bcd5666","fromSide":"right","toNode":"b546c1348eb00b38","toSide":"left"},
+		{"id":"6e4f205ed80904cc","fromNode":"26171ef8788b085f","fromSide":"right","toNode":"328627dffcbe25e6","toSide":"left"},
+		{"id":"301a754580ca4fdf","fromNode":"26171ef8788b085f","fromSide":"right","toNode":"55adf7a9d3a1a7d3","toSide":"left"},
+		{"id":"25c27884995abd5d","fromNode":"c84a67a10cd6ba9d","fromSide":"right","toNode":"a21000174aeee9ca","toSide":"left"},
+		{"id":"5139d6cdad2508f9","fromNode":"3317dfd24e5e54cc","fromSide":"right","toNode":"75fe93181f646ca8","toSide":"left"},
+		{"id":"ae30d242027c7c3b","fromNode":"75fe93181f646ca8","fromSide":"right","toNode":"891699c3d5988765","toSide":"left"},
+		{"id":"5890218097d4a228","fromNode":"75fe93181f646ca8","fromSide":"right","toNode":"8a16a039e990cc5a","toSide":"left"},
+		{"id":"7719aa7b5eab6603","fromNode":"75fe93181f646ca8","fromSide":"right","toNode":"f18b7fb25bffef48","toSide":"left"},
+		{"id":"eb46568679ab4756","fromNode":"8a16a039e990cc5a","fromSide":"right","toNode":"0f99decdbc27bfe1","toSide":"left"},
+		{"id":"2448726615f27596","fromNode":"f18b7fb25bffef48","fromSide":"right","toNode":"b3a00816631e6934","toSide":"left"},
+		{"id":"2b02da5510c22f5a","fromNode":"75fe93181f646ca8","fromSide":"bottom","toNode":"f07e1645126eac99","toSide":"top"},
+		{"id":"257cdc854ee2eef1","fromNode":"891699c3d5988765","fromSide":"right","toNode":"15422b85aabe466b","toSide":"left"}
+	]
+}
