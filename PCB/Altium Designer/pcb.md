@@ -1,7 +1,7 @@
 # 快捷键
 
 - 创建pcb后用q来切换单位
-- g设置网格长度，`ctrl+shift+g`输入数字来确定
+- `g`设置网格长度，`ctrl+shift+g`输入数字来确定
 - `ctrl+pgdn`来显示包含元件的最大图,就是fit
 - ctrl+滚轮就是放大和缩小窗格=ctrl+右键=paup和padn,这是放大和缩小
 - 滚轮上下移动，shift 滚轮左右移动
@@ -23,15 +23,13 @@
 
 按下数字1，进入另一个视图，**Design » Edit Board Shape**，
 
-
-
 # 层级显示
 - panel->view configuration
 - 快捷键`L`
 - shift+S可以在当前层显示
 - 使用ctrl+shift+滚轮切换层级,或者`+/-`或者*
 层级管理器：design->layermanagement
-keepout layer 是所有的层都禁止铺铜
+`keepout layer `是所有的层都禁止铺铜
 而在某个层使用`P+K`防止的keepout 只作用当前层
 
 
