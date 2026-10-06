@@ -1,9 +1,8 @@
 - `cmake_minimum_required(VERSION 3.10)` 指定 **CMake** 运行所需的最低版本
-- `project(Tutorial VERSION 1.0)` 设置项目的名称
+- `project(xxx C ASM)` 设置项目的名称和支持的语言
 - `add_executable(Tutorial main.cpp)` 构建一个名为 'Tutorial' 的可执行文件
-- `cmake ..` CMake 在父目录 (`..`) 中找到 `CMakeLists.txt`，并在当前目录生成构建系统文件。
-- `cmake --build .` 构建
-
+- `add_subdirectory` 添加子目录
+- `set(CMAKE_C_STANDARD 11) set(CMAKE_C_STANDARD_REQUIRED ON)`设置语言版本
 # 语法
 ```
 set(变量名 变量值1 变量值2 ... CACHE 缓存说明 [FORCE])
