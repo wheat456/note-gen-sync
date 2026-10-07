@@ -1,32 +1,30 @@
 # 快捷键
-
-- 创建pcb后用q来切换单位
-- `g`设置网格长度，`ctrl+shift+g`输入数字来确定
+## 熟练
+- 创建`PCB`后用`Q`来切换单位
+## 新手
+- `G`设置网格长度，`ctrl+shift+g`输入数字来确定
 - `ctrl+pgdn`来显示包含元件的最大图,就是fit
 - ctrl+滚轮就是放大和缩小窗格=ctrl+右键=paup和padn,这是放大和缩小
-- 滚轮上下移动，shift 滚轮左右移动
+- 滚轮上下移动，`shift` 滚轮左右移动
 - `I+L`在某个**区域摆放器件**
 - `V+B`翻转板子，俯视图和底视图的切换
 - `Shift + F` 查找相似元件
 - `shift+D`:抓取某个点进行移动
+- `alt+左键`选中飞线
 
 # 原点
 
 - 相对原点： **Edit » Origin » Set**
-
 # 视图
-
-- **View » Fit Board** 查看整个板=ctrl+padn
+- **View » Fit Board** 查看整个板=`ctrl+padn`
 - `V+F`让屏幕显示整块板
-
 # 裁板
 
 按下数字1，进入另一个视图，**Design » Edit Board Shape**，
-
 # 层级显示
-- panel->view configuration
+- `panel->view configuration`
 - 快捷键`L`
-- shift+S可以在当前层显示
+- `shift+S`可以在当前层显示
 - 使用ctrl+shift+滚轮切换层级,或者`+/-`或者*
 层级管理器：design->layermanagement
 `keepout layer `是所有的层都禁止铺铜
