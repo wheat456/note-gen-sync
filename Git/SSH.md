@@ -38,4 +38,3 @@ Host 002pepsi # 账户名，可以自定义比如 123z,与ssh -T git@123z
 ```shell
 git remote add origin new_remote_url
 ```
-- 
