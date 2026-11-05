@@ -17,3 +17,8 @@ sch decals
 
 水平镜像 ctrl f
 垂直镜像shift ctrl f
+
+
+# sch
+- 设计栅格g 50
+- 显示栅格gd 100   
